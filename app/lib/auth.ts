@@ -41,8 +41,7 @@ export const authOptions = {
             if(session && session.user) {
                 session.user.id = token.sub
             }
-
             return session
         }
-    }
+    },
 }
