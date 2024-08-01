@@ -26,7 +26,7 @@ export const authOptions = {
                 if(user) {
                     return {
                         id: user?.id?.toString(),
-                        email: credentials.email
+                        email: credentials.email,
                     };
                 } else {
                     return null;
@@ -38,8 +38,9 @@ export const authOptions = {
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
         session: ({ session, token, user }: any) => {
+            
             if(session && session.user) {
-                session.user.id = token.sub
+                session.user.id = token.sub;
             }
             return session
         }
